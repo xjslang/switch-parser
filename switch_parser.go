@@ -83,7 +83,6 @@ func Plugin(pb *parser.Builder) {
 		if p.CurrentToken.Type != switchTokenType {
 			return next()
 		}
-		// discriminant
 		switchStmt := &SwitchStatement{
 			cases: []SwitchCase{},
 		}

@@ -62,7 +62,7 @@ func Plugin(pb *parser.Builder) {
 	switchTokenType := lb.RegisterTokenType("switch")
 	switchCaseTokenType := lb.RegisterTokenType("case")
 	defaultTokenType := lb.RegisterTokenType("default")
-	lb.UseInterceptor(func(l *lexer.Lexer, next func() token.Token) token.Token {
+	lb.UseTokenInterceptor(func(l *lexer.Lexer, next func() token.Token) token.Token {
 		ret := next()
 		if ret.Type != token.IDENT {
 			return ret
